@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node ./dist/server.js",
     "tsc": "tsc",
+    "copy-templates": "copyfiles -u 1 src/**/*.pug dist/",
+    "build": "npm run tsc && npm run copy-templates",
     "postinstall": "npm run tsc",
     "dev": "nodemon src/server.ts",
     "start:prod": "set NODE_ENV=production&&nodemon server.js",
@@ -56,6 +58,7 @@
     "@types/nodemailer": "^6.4.17",
     "@types/pug": "^2.0.10",
     "@typescript-eslint/parser": "^8.29.1",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^10.0.2",
